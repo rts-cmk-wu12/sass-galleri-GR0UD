@@ -1,0 +1,49 @@
+#galleri-section {
+    margin: 0rem 5rem;
+
+    #wrapper {
+        column-count: 5;
+        width: 100%;
+        margin: 0 auto;
+        column-gap: .75rem;
+
+        img {
+            max-width: 100%;
+            @include transition(scale, 0.3s);
+
+            &:hover {
+                scale: .975;
+            }
+        }
+    }
+}
+
+footer {
+    justify-content: center;
+    border-top: 1px solid $color-border;
+    margin-top: 10rem;
+
+    #footer-wrapper {
+        margin-top: 4rem;
+        margin-bottom: 8rem;
+
+        ul {
+            @include flex-center(row);
+            list-style: none;
+            gap: 1rem;
+
+            li {
+                a {
+                    color: $color-black;
+                    text-decoration: none;
+                    font-weight: 600;
+                    @include transition(color, 0.2s);
+
+                    &:hover {
+                        color: $color-text;
+                    }
+                }
+            }
+        }
+    }
+}

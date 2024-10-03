@@ -1,0 +1,94 @@
+header {
+    #nav-top {
+        border-bottom: 1px solid $color-border;
+        padding: $padding-section;
+        @include flex-center(row);
+
+        input {
+            background-color: $color-bg-input;
+            color: $color-text;
+            border-radius: .75rem;
+            border: none;
+            padding: 1rem;
+            width: 100%;
+            font-weight: 600;
+        }
+    }
+
+    #nav-bot {
+        @include flex-center(column);
+        align-items: flex-start;
+
+        #nav-bot-wrapper {
+            margin: 3.5rem 30rem;
+
+            h1 {
+                color: $color-black;
+                font-size: 3rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+
+            ul {
+                @include flex-center(row);
+                list-style: none;
+                gap: 2rem;
+
+                li {
+                    button {
+                        background-color: rgba($color-black, 0);
+                        opacity: 0.5;
+                        border: none;
+                        color: $color-black;
+                        font-weight: 600;
+                        text-decoration: none;
+                        @include transition(opacity, 0.2s);
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    #popup-background {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9998;
+        @include flex-center(column);
+    }
+
+    #popup-image {
+        max-width: 90%;
+        max-height: 80%;
+        z-index: 9999;
+    }
+
+    #close-popup {
+        background-color: transparent;
+        color: $color-white;
+        border: 1.5px solid $color-white;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 1rem;
+        @include transition(background-color, 0.3s);
+        @include transition(color, 0.3s);
+
+        &:hover {
+            background-color: $color-white;
+            color: $color-black;
+        }
+    }
+}
